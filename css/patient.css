@@ -1,0 +1,90 @@
+.container {
+    display: flex;
+    flex-direction: row;
+
+    gap: 5%;
+}
+
+.admin-table {
+    width: 70%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.button {
+    width: 80%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.new-patience {
+    width: clamp(150px, 15vw, 230px);
+    height: clamp(45px, 8vw, 65px);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 50px;
+
+    border-radius: 5px;
+
+    background-color: #E2DED0;
+
+    cursor: pointer;
+}
+
+.new-patience span {
+    font-size: clamp(.825rem, 3vw, 1.20rem);
+    font-weight: 500;
+}
+
+.table {
+    width: clamp(200px, 55vw, 100%);
+    min-height: 600px;
+    height: auto;
+
+    border: 1px solid;
+}
+
+.column {
+    width: 100%;
+    height: 80px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+    border-bottom: 1px solid;
+}
+
+.column span {
+    width: 100%;
+    height: 80%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: clamp(1rem, 2vw, 1.5rem);
+
+    text-align: center;
+
+    border-right: 1px solid;
+}
+
+.column span:last-child  {
+    width: 40%;
+    border-right: none;
+}
+
+.column span img  {
+    width: clamp(28px, 2vw, 35px);
+    height: clamp(28px, 2vw, 35px);
+    border-right: none;
+
+    cursor: pointer;
+}
