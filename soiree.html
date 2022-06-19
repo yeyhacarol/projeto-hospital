@@ -8,6 +8,8 @@
     <link rel="stylesheet" type="text/css" href="css/reset.css">
     <link rel="stylesheet" type="text/css" href="css/side-menu.css">
     <link rel="stylesheet" type="text/css" href="css/appointment.css">
+
+    <script type="module" src="js/soiree/soireeApp.js"></script>
     <title>Agendar consultas</title>
 </head>
 
@@ -53,10 +55,15 @@
                         <div class="line"></div>
                     </div>
                     <div class="patience-insert">
+                        
                         <input type="text" placeholder="Nome" id="patient-name">
+                        <div id="data-list">
+                            
+                        </div>
+                        
                         <div class="data">
-                            <input type="date">
-                            <input type="text" placeholder="CPF">
+                            <input type="date" id="patient-birth-date">
+                            <input type="text" placeholder="CPF" id="patient-cpf">
                         </div>
                     </div>
                 </div>
@@ -69,7 +76,7 @@
                         <div class="data">
                             <input type="text" placeholder="Nome do médico">
                             <select name="specialty" id="specialty">
-                                <option value="">Ginecologista</option>
+        
                             </select>
                         </div>
                         <div class="data">
