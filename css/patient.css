@@ -39,7 +39,7 @@
 }
 
 #new-patience span {
-    font-size: clamp(.825rem, 3vw, 1.20rem);
+    font-size: clamp(.825rem, 3vw, 1.2rem);
     font-weight: 500;
 }
 
@@ -70,7 +70,7 @@
     align-items: center;
     justify-content: center;
 
-    font-size: clamp(1rem, 2vw, 1.5rem);
+    font-size: clamp(1rem, 2vw, 1.1rem);
 
     text-align: center;
 

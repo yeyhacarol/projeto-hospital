@@ -9,7 +9,9 @@
     <link rel="stylesheet" type="text/css" href="css/side-menu.css">
     <link rel="stylesheet" type="text/css" href="css/patient.css">
 
-    <script src="js/modal.js" defer></script>
+    <script type="module" src="js/modal.js"></script>
+    
+    <script type="module" src="js/patient/patientApp.js"></script>
     <title>Cadastro de paciente</title>
 </head>
 
@@ -46,7 +48,7 @@
             <div class="separator"></div>
             <span>Todos os direitos reservados.&copy;</span>
         </nav>
-        
+
         <div class="admin-table">
             <div class="button">
                 <div id="new-patience">
@@ -62,15 +64,8 @@
                     <span>CPF</span>
                     <span>Ação</span>
                 </div>
-                <div class="column">
-                    <span>Lucas</span>
-                    <span>Delmondes</span>
-                    <span>07/08/2000</span>
-                    <span>(11) 95123-6859</span>
-                    <span>000.000.000-00</span>
-                    <span>
-                        <img src="img/edit.png" alt="Editar paciente" id="edit">
-                    </span>
+                <div id="values">
+
                 </div>
             </div>
         </div>
@@ -83,13 +78,13 @@
             </div>
             <form id="patient-registration">
                 <div class="data">
-                    <input type="text" placeholder="Primeiro nome">
-                    <input type="text" placeholder="Sobrenome">
-                    <input type="date" placeholder="Data de nascimento">
-                    <input type="text" placeholder="CPF" id="key">
-                    <input type="number" placeholder="Telefone">
+                    <input type="text" placeholder="Primeiro nome" id="firstName">
+                    <input type="text" placeholder="Sobrenome" id="lastName">
+                    <input type="date" placeholder="Data de nascimento" id="birthDate">
+                    <input type="text" placeholder="CPF" id="cpf">
+                    <input type="text" placeholder="Telefone" id="phone">
                 </div>
-                <button type="button">Salvar</button>
+                <button type="button" id="save">Salvar</button>
             </form>
         </div>
     </div>
