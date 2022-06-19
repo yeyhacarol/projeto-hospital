@@ -22,6 +22,14 @@ const readPatients = async () => {
     return data
 }
 
+const readPatient = async (id) => {
+    const response = await fetch(`${url}/${id}`)
+
+    const data = await response.json()
+
+    return data
+}
+
 const updatePatient = async (patient, id) => {
     const options = {
         'method': 'PUT',
@@ -37,4 +45,5 @@ const updatePatient = async (patient, id) => {
 
 export { createPatient,
          readPatients,
+         readPatient,
          updatePatient }

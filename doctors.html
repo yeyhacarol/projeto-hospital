@@ -11,7 +11,6 @@
 
     <script type="module" src="js/modal.js"></script>
     
-    <script type="module" src="js/patient/patientApp.js"></script>
     <title>Cadastro de paciente</title>
 </head>
 
@@ -50,18 +49,24 @@
         </nav>
 
         <div class="admin-table">
-            <div class="button patient">
-                <div id="new-patience">
-                    <span>Novo paciente</span>
+            <div class="buttons">
+                <div class="button">
+                    <div id="new-specialty">
+                        <span>Nova especialidade</span>
+                    </div>
+                </div>
+                <div class="button">
+                    <div id="new-doctor">
+                        <span>Novo médico</span>
+                    </div>
                 </div>
             </div>
             <div class="table">
                 <div class="column">
                     <span>Primeiro nome</span>
                     <span>Sobrenome</span>
-                    <span>Data nascimento</span>
+                    <span>Especialidade</span>
                     <span>Telefone</span>
-                    <span>CPF</span>
                     <span>Ação</span>
                 </div>
                 <div id="values">
@@ -71,6 +76,23 @@
         </div>
     </div>
 
+    <div id="modal-container">
+        <div class="modal">
+            <div id="close-modal">
+                <span>X</span>
+            </div>
+            <form id="patient-registration">
+                <div class="data">
+                    <input type="text" placeholder="Primeiro nome" id="firstName">
+                    <input type="text" placeholder="Sobrenome" id="lastName">
+                    <input type="date" placeholder="Data de nascimento" id="birthDate">
+                    <input type="text" placeholder="CPF" id="cpf">
+                    <input type="text" placeholder="Telefone" id="phone">
+                </div>
+                <button type="button" id="save">Salvar</button>
+            </form>
+        </div>
+    </div>
 </body>
 
 </html>

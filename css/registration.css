@@ -14,13 +14,23 @@
     justify-content: center;
 }
 
-.button {
+.button.patient {
     width: 80%;
     display: flex;
     justify-content: flex-end;
 }
+.buttons {
+    width: 80%;
+    
+    gap: 25px;
 
-#new-patience {
+    display: flex;
+    justify-content: flex-end;   
+}
+
+#new-patience,
+#new-specialty,
+#new-doctor {
     width: clamp(150px, 15vw, 230px);
     height: clamp(45px, 8vw, 65px);
 
@@ -38,9 +48,12 @@
     user-select: none;
 }
 
-#new-patience span {
+#new-patience span,
+#new-specialty span,
+#new-doctor span {
     font-size: clamp(.825rem, 3vw, 1.2rem);
     font-weight: 500;
+    text-align: center;
 }
 
 .table {
@@ -51,7 +64,8 @@
     border: 1px solid;
 }
 
-.column {
+.column,
+.row {
     width: 100%;
     height: 80px;
 
@@ -62,7 +76,8 @@
     border-bottom: 1px solid;
 }
 
-.column span {
+.column span,
+.row span {
     width: 100%;
     height: 80%;
 
@@ -71,13 +86,14 @@
     justify-content: center;
 
     font-size: clamp(1rem, 2vw, 1.1rem);
-
+    text-transform: capitalize;
     text-align: center;
 
     border-right: 1px solid;
 }
 
-.column span:last-child {
+.column span:last-child,
+.row span:last-child {
     width: 40%;
     border-right: none;
 }
