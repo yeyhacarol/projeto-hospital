@@ -38,14 +38,18 @@ const savePatient = async () => {
     }
 
     closeModal()
+    updateTable()
 
 }
 
 const editPatient = async (event) => {
     if (event.target.tagName === 'IMG') {
+
         const [action, id] = event.target.id.split('-')
 
         if (action == 'edit') {
+            openModal()
+
             let patient = await readPatient(id)
 
             document.getElementById('modal-container').dataset.id = patient.id

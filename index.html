@@ -10,14 +10,16 @@
     <link rel="stylesheet" type="text/css" href="css/registration.css">
 
     <script type="module" src="js/modal.js"></script>
-    
+    <script src="js/sideMenu.js" defer></script>
+
     <script type="module" src="js/patient/patientApp.js"></script>
     <title>Cadastro de paciente</title>
 </head>
 
 <body>
     <div class="container">
-        <nav class="side-menu">
+        <nav id="side-menu">
+            <span id="close-nav">&times;</span>
             <img src="img/logo.png" alt="logo wellness" class="logo">
             <span>Ferramentas administrativas</span>
             <div class="admin-tools">
@@ -48,26 +50,89 @@
             <div class="separator"></div>
             <span>Todos os direitos reservados.&copy;</span>
         </nav>
+        <span id="open-nav">&#9776;</span>
 
         <div class="admin-table">
-            <div class="button patient">
-                <div id="new-patience">
-                    <span>Novo paciente</span>
+            <img src="img/plus.png" alt="plus" id="plus">
+            <div class="listing">
+                <div class="button patient">
+                    <div id="new-patience">
+                        <span>Novo paciente</span>
+                    </div>
+                </div>
+                <div class="table">
+                    <div class="column">
+                        <span>Primeiro nome</span>
+                        <span>Sobrenome</span>
+                        <span>Data nascimento</span>
+                        <span>Telefone</span>
+                        <span>CPF</span>
+                        <span>Ação</span>
+                    </div>
+                    <div id="values">
+                        <div class="row">
+                            <div class="top-info">
+                                <div class="name">
+                                    <span>Primeiro nome</span>
+                                    <span>Sobrenome</span>
+                                </div>
+                                <span>Data nascimento</span>
+                            </div>
+                            <div class="bottom-info">
+                                <span>Telefone</span>
+                                <span>CPF</span>
+                            </div>
+                            <span>Ação</span>
+                        </div>
+                        <div class="row">
+                            <div class="top-info">
+                                <div class="name">
+                                    <span>Primeiro nome</span>
+                                    <span>Sobrenome</span>
+                                </div>
+                                <span>Data nascimento</span>
+                            </div>
+                            <div class="bottom-info">
+                                <span>Telefone</span>
+                                <span>CPF</span>
+                            </div>
+                            <span>Ação</span>
+                        </div>
+                        <div class="row">
+                            <div class="top-info">
+                                <div class="name">
+                                    <span>Primeiro nome</span>
+                                    <span>Sobrenome</span>
+                                </div>
+                                <span>Data nascimento</span>
+                            </div>
+                            <div class="bottom-info">
+                                <span>Telefone</span>
+                                <span>CPF</span>
+                            </div>
+                            <span>Ação</span>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="table">
-                <div class="column">
-                    <span>Primeiro nome</span>
-                    <span>Sobrenome</span>
-                    <span>Data nascimento</span>
-                    <span>Telefone</span>
-                    <span>CPF</span>
-                    <span>Ação</span>
-                </div>
-                <div id="values">
+        </div>
+    </div>
 
-                </div>
+    <div id="modal-container">
+        <div class="modal">
+            <div id="close-modal">
+                <span>X</span>
             </div>
+            <form id="patient-registration">
+                <div class="data">
+                    <input type="text" placeholder="Primeiro nome" id="firstName">
+                    <input type="text" placeholder="Sobrenome" id="lastName">
+                    <input type="date" placeholder="Data de nascimento" id="birthDate">
+                    <input type="text" placeholder="CPF" id="cpf">
+                    <input type="text" placeholder="Telefone" id="phone">
+                </div>
+                <button type="button" id="save">Salvar</button>
+            </form>
         </div>
     </div>
 

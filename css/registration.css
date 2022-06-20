@@ -1,12 +1,16 @@
 .container {
+    width: 100%;
+    height: 100vh;
+
     display: flex;
     flex-direction: row;
-
-    gap: 5%;
 }
 
 .admin-table {
-    width: 70%;
+    width: 100%;
+    height: 100%;
+
+    position: absolute;
 
     display: flex;
     flex-direction: column;
@@ -14,18 +18,27 @@
     justify-content: center;
 }
 
+.listing {
+    height: 70%;
+}
+
 .button.patient {
-    width: 80%;
     display: flex;
     justify-content: flex-end;
 }
+
+#plus {
+    display: none;
+}
+
+/* doctors.html */
 .buttons {
     width: 80%;
-    
+
     gap: 25px;
 
     display: flex;
-    justify-content: flex-end;   
+    justify-content: flex-end;
 }
 
 #new-patience,
@@ -38,7 +51,7 @@
     align-items: center;
     justify-content: center;
 
-    margin-bottom: 50px;
+    margin-bottom: 5%;
 
     border-radius: 5px;
 
@@ -57,7 +70,7 @@
 }
 
 .table {
-    width: clamp(200px, 55vw, 100%);
+    width: clamp(500px, 85vw, 1040px);
     min-height: 600px;
     height: auto;
 
@@ -98,7 +111,7 @@
     border-right: none;
 }
 
-.column span img {
+.row span img {
     width: clamp(28px, 2vw, 35px);
     height: clamp(28px, 2vw, 35px);
     border-right: none;
@@ -169,10 +182,11 @@
 }
 
 .data {
-    width: 80%; 
-    
+    width: 100%;
+
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
 
     margin-bottom: 30px;
     gap: 10px;
@@ -180,7 +194,7 @@
 
 input {
     width: clamp(130px, 45vw, 290px);
-    height: clamp(35px, 5vw, 50px);
+    height: clamp(40px, 5vw, 50px);
 
     padding: 0px 10px;
 
@@ -191,7 +205,7 @@ input {
     appearance: textfield;
 }
 
-input[type=number]::-webkit-inner-spin-button { 
+input[type=number]::-webkit-inner-spin-button {
     -webkit-appearance: none;
 }
 
@@ -208,4 +222,60 @@ button {
     cursor: pointer;
 
     background-color: #E2DED0;
+}
+
+@media screen and (max-width: 550px) {
+    .button.patient {
+        display: none;
+    }
+
+    #plus {
+        display: block;
+
+        position: fixed;
+        right: 20px;
+        bottom: 20px;
+
+        cursor: pointer;
+    }
+
+    .listing {
+        width: 100%;
+    }
+
+    #values {
+        width: 100%;
+    }
+
+    .table,
+    .row,
+    .row span {
+        width: 100%;
+        border: none;
+    }
+
+    .column {
+        display: none;
+    }
+
+    .row {
+        width: 100%;
+        height: 115px;
+
+        display: flex;
+
+        gap: 10px;
+        margin-bottom: 15px;
+
+        background-color: rgb(207, 207, 207);
+    }
+
+    .top-info {
+        width: 40%;
+    }
+
+    .name {
+        display: flex;
+        gap: 3px;
+    }
 }
