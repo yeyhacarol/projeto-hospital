@@ -8,7 +8,11 @@
     <link rel="stylesheet" type="text/css" href="css/reset.css">
     <link rel="stylesheet" type="text/css" href="css/side-menu.css">
     <link rel="stylesheet" type="text/css" href="css/appointment.css">
-
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css">
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> 
+    <script type="module" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    
     <script type="module" src="js/soiree/soireeApp.js"></script>
     <title>Agendar consultas</title>
 </head>
@@ -56,14 +60,12 @@
                     </div>
                     <div class="patience-insert">
                         
-                        <input type="text" placeholder="Nome" id="patient-name">
-                        <div id="data-list">
-                            
-                        </div>
+                        <input type="text" placeholder="Nome" id="patient-name" autocomplete="off">
+                        <div id="data-list"></div>
                         
                         <div class="data">
-                            <input type="date" id="patient-birth-date">
-                            <input type="text" placeholder="CPF" id="patient-cpf">
+                            <input type="date" disabled id="patient-birth-date">
+                            <input type="text" disabled placeholder="CPF" id="patient-cpf">
                         </div>
                     </div>
                 </div>
@@ -74,19 +76,23 @@
                     </div>
                     <div class="scheduling-insert">
                         <div class="data">
-                            <input type="text" placeholder="Nome do médico">
+                            <input type="text" disabled placeholder="Nome do médico" id="doctor-name">
                             <select name="specialty" id="specialty">
-        
                             </select>
                         </div>
+                        <div id="data-list-doctor"></div>
                         <div class="data">
-                            <input type="datetime-local">
-                            <input type="text" placeholder="R$ 00.00">
+                            <input type="datetime-local" id="appointment-date">
+                            <input type="text" disabled placeholder="R$ 0.00" id="specialty-cost">
                         </div>
+                        <div class="data">
+                            <textarea id="appointment-description" placeholder="Observação"></textarea>
+                        </div>
+
                     </div>
                 </div>
                 <div class="save">
-                    <button type="button">Agendar</button>
+                    <button id="save" type="button">Agendar</button>
                 </div>
             </form>
         </div>
