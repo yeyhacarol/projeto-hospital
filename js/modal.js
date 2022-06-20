@@ -10,7 +10,9 @@ const closeModal = () => {
     modal.classList.remove('active')
 }
 
-document.getElementById('close-modal').addEventListener('click', closeModal)  
+document.getElementById('close-modal').addEventListener('click', closeModal)
+document.getElementById('new-patience').addEventListener('click', openModal)  
+document.getElementById('plus').addEventListener('click', openModal)  
 
 export { openModal,
          closeModal}

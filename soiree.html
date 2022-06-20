@@ -9,13 +9,16 @@
     <link rel="stylesheet" type="text/css" href="css/side-menu.css">
     <link rel="stylesheet" type="text/css" href="css/appointment.css">
 
+    <script src="js/sideMenu.js" defer></script>
+
     <script type="module" src="js/soiree/soireeApp.js"></script>
     <title>Agendar consultas</title>
 </head>
 
 <body>
     <div class="container">
-        <nav class="side-menu">
+        <nav id="side-menu">
+            <span id="close-nav">&times;</span>
             <img src="img/logo.png" alt="logo wellness" class="logo">
             <span>Ferramentas administrativas</span>
             <div class="admin-tools">
@@ -46,6 +49,7 @@
             <div class="separator"></div>
             <span>Todos os direitos reservados.&copy;</span>
         </nav>
+        <span id="open-nav">&#9776;</span>
 
         <div class="scheduling-container">
             <form id="scheduling-form">
