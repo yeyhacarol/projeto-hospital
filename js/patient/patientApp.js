@@ -62,6 +62,7 @@ const editPatient = async (event) => {
 
         }
     }
+
 }
 
 const updateTable = async () => {
@@ -76,5 +77,6 @@ const updateTable = async () => {
 updateTable()
 
 document.getElementById('new-patience').addEventListener('click', openModal)
+document.getElementById('close-modal').addEventListener('click', closeModal)
 document.getElementById('save').addEventListener('click', savePatient)
 document.getElementById('values').addEventListener('click', editPatient)
