@@ -11,8 +11,25 @@ const createDoctor = async (doctor) => {
         }
     }
 
-    await fetch(url, options)
+    await fetch(url, options).then(() =>{
+        toastr.success('Médico criado com sucesso!', 'Sucesso')
+    })
 }
+
+const createSpecialty = async (specialty) => {
+    const options = {
+        'method': 'POST',
+        'body': JSON.stringify(specialty),
+        'headers': {
+            'content-type': 'application/json'
+        }
+    }
+
+    await fetch('https://hospital-project-es3.herokuapp.com/specialty', options).then(() =>{
+        toastr.success('Especialidade criada com sucesso!', 'Sucesso')
+    })
+}
+
 
 const readDoctors = async () => {
     const response = await fetch(url)
@@ -40,7 +57,9 @@ const updateDoctor = async (doctor, id) => {
         }
     }
 
-    await fetch (`${url}/${id}`, options)
+    await fetch (`${url}/${id}`, options).then(() =>{
+        toastr.success('Medico atualizado com sucesso!', 'Sucesso')
+    })
 }
 
 const getSpecialty = async () => {
@@ -58,4 +77,5 @@ export { createDoctor,
          readDoctors,
          readDoctor,
          updateDoctor,
-         getSpecialty }
+         getSpecialty,
+         createSpecialty }
