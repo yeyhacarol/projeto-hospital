@@ -8,6 +8,8 @@
     <link rel="stylesheet" type="text/css" href="css/reset.css">
     <link rel="stylesheet" type="text/css" href="css/side-menu.css">
     <link rel="stylesheet" type="text/css" href="css/registration.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> 
+    <script type="module" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
     <script src="js/sideMenu.js" defer></script>
     <script src="js/utils/mask.js" defer></script>
     <script type="module" src="js/modal.js"></script>
@@ -111,7 +113,7 @@
             <form id="specialty-registration">
                 <div class="data">
                     <input type="text" placeholder="Especialidade" id="specialty">
-                    <input type="text" placeholder="Valor da consulta" id="query-cost">
+                    <input type="text" placeholder="Valor da consulta" id="query-cost" onInput="mascaraMoeda(event);">
                 </div>
                 <button type="button" id="save-specialty">Salvar</button>
             </form>

@@ -1,6 +1,6 @@
 'use strict'
 
-import { readDoctors,getSpecialty, createDoctor, readDoctor, updateDoctor } from "./doctor.js"
+import { readDoctors,getSpecialty, createDoctor, readDoctor, updateDoctor, createSpecialty } from "./doctor.js"
 import { closeModal, openModal } from "../modal.js"
 import { capitalize } from "../utils/capitalize.js"
 
@@ -58,7 +58,7 @@ const createOption = (specialty) => {
     const option = document.createElement('option')
     option.setAttribute("data-id", specialty.id);
     option.setAttribute("data-cost", specialty.cost);
-    option.innerHTML = specialty.name
+    option.innerHTML = capitalize(specialty.name)
 
     return option
 }
@@ -86,6 +86,24 @@ const saveDoctor = async () => {
     updateTable()
 
 }
+
+
+const saveSpecialty = async () => {
+
+
+    const specialty = {
+        "name": document.getElementById('specialty').value.toLowerCase(),
+        "cost": (document.getElementById('query-cost').value).replace('R$', '').replace(',', '.').replace(/\s/g, '')
+    }
+   
+    await createSpecialty(specialty)
+    
+    closeModal(document.getElementById('specialty-modal'))
+    updateTable()
+    updateOption()
+
+}
+
 
 const editDoctor = async (event) => {
     if (event.target.tagName === 'IMG') {
@@ -117,6 +135,7 @@ const editDoctor = async (event) => {
 
 document.getElementById('save-doctor').addEventListener('click', saveDoctor)
 document.getElementById('values').addEventListener('click', editDoctor)
+document.getElementById('save-specialty').addEventListener('click', saveSpecialty)
 
 updateTable()
 updateOption()

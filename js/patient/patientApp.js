@@ -3,6 +3,7 @@
 import { formatDate } from "../utils/formatDate.js"
 import { createPatient, readPatient, readPatients, updatePatient } from "./patient.js"
 import { openModal, closeModal } from "../modal.js"
+import { capitalize } from "../utils/capitalize.js"
 
 const createRow = (patient) => {
     const row = document.createElement('div')
@@ -48,14 +49,14 @@ const editPatient = async (event) => {
         const [action, id] = event.target.id.split('-')
 
         if (action == 'edit') {
-            openModal(document.getElementById('values'))
+            openModal()
 
             let patient = await readPatient(id)
 
             document.getElementById('modal-container').dataset.id = patient.id
 
             document.getElementById('firstName').value = capitalize(patient.firstName)
-            document.getElementById('lastName').value = patient.lastName
+            document.getElementById('lastName').value = capitalize(patient.lastName)
             document.getElementById('birthDate').value = patient.birthDate
             document.getElementById('phone').value = patient.phone
             document.getElementById('cpf').value = patient.cpf

@@ -13,13 +13,13 @@ const createRowPatient = (patient) => {
     return row
 }
 
-const createRowDoctor = (patient) => {
+const createRowDoctor = (doctor) => {
     const row = document.createElement('div')
     row.classList.add('column-doctor')
-    row.dataset.id = patient.id
+    row.dataset.id = doctor.id
     row.innerHTML =
-        `<span>${patient.firstName}</span>
-         <span>${patient.lastName}</span>
+        `<span>${doctor.firstName}</span>
+         <span>${doctor.lastName}</span>
         `
 
     return row
@@ -132,30 +132,29 @@ const saveAppoinment = async () => {
         "patient":  document.getElementById('patient-name').dataset.id,
         "doctor": document.getElementById('doctor-name').dataset.id ,
         "description": document.getElementById('appointment-description').value,
-        "date": new Date(document.getElementById('appointment-date').value)
+        "date": document.getElementById('appointment-date').value
     }
 
     console.log(appointment)
 
-
-    // if(!appointment.patient){
-    //     toastr.error('Por favor, selecione um paciente!', 'Erro')
-    //     return
-    // }
-    // if(!appointment.doctor){
-    //     toastr.error('Por favor, selecione um medico!', 'Erro')
-    //     return
-    // }
-    // if(!appointment.date){
-    //     toastr.error('Por favor, selecione uma data para a consulta!', 'Erro')
-    //     return
-    // }
-    // if(!appointment.description){
-    //     toastr.error('Por favor, Escreva uma observação!', 'Erro')
-    //     return
-    // }
+    if(!appointment.patient){
+        toastr.error('Por favor, selecione um paciente!', 'Erro')
+        return
+    }
+    if(!appointment.doctor){
+        toastr.error('Por favor, selecione um medico!', 'Erro')
+        return
+    }
+    if(!appointment.date){
+        toastr.error('Por favor, selecione uma data para a consulta!', 'Erro')
+        return
+    }
+    if(!appointment.description){
+        toastr.error('Por favor, Escreva uma observação!', 'Erro')
+        return
+    }
     
-    //await createAppointment(appointment)
+    await createAppointment(appointment)
 }
 
 updateOption()

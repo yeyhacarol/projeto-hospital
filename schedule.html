@@ -10,9 +10,7 @@
     <link rel="stylesheet" type="text/css" href="css/registration.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> 
     <script type="module" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
-    <script src="js/sideMenu.js" defer></script>
-    <script type="module" src="js/modal.js"></script>
-    <script type="module" src="js/patient/patientApp.js"></script>
+    <script type="module" src="/js/schedule/scheduleApp.js"></script>
     <title>Cadastro de paciente</title>
 </head>
 
@@ -55,18 +53,21 @@
         <div class="admin-table">
             <img src="img/plus.png" alt="plus" id="plus">
             <div class="listing">
-                <div class="button patient">
-                    <div id="new-patience">
-                        <span>Novo paciente</span>
+                <div class="search-doctor">
+                    <div class="data">
+                        <input type="text" placeholder="Pesquise pelo nome do médico" id="doctor-name">
+                        <input type="date" id="appoitment-date">
+                        <label for="appointment-active"> Consultas ativas</label>
+                        <input type="checkbox" name="appointment-active" id="appointment-active">
                     </div>
+                    
                 </div>
+                <div id="data-list-doctor"></div>
                 <div class="table">
                     <div class="column">
-                        <span>Primeiro nome</span>
-                        <span>Sobrenome</span>
-                        <span>Data nascimento</span>
-                        <span>Telefone</span>
+                        <span>Nome do paciente</span>
                         <span>CPF</span>
+                        <span>Data agendada</span>
                         <span>Ação</span>
                     </div>
                     <div id="values">
