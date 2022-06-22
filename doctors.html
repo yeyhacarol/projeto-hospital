@@ -9,8 +9,10 @@
     <link rel="stylesheet" type="text/css" href="css/side-menu.css">
     <link rel="stylesheet" type="text/css" href="css/registration.css">
     <script src="js/sideMenu.js" defer></script>
+    <script src="js/utils/mask.js" defer></script>
     <script type="module" src="js/modal.js"></script>
     <script type="module" src="js/doctor/doctorApp.js"></script>
+    <script type="module" src="js/utils/capitalize.js" defer></script>
     <title>Cadastro de paciente</title>
 </head>
 
@@ -84,12 +86,14 @@
             </div>
             <form id="doctor-registration">
                 <div class="data">
-                    <input type="text" placeholder="Primeiro nome" id="firstName">
-                    <input type="text" placeholder="Sobrenome" id="lastName">
-                    <input type="text" placeholder="Telefone" id="phone">
+                    <input type="text" placeholder="Primeiro nome" id="firstName" autocomplete="off">
+                    <input type="text" placeholder="Sobrenome" id="lastName" autocomplete="off">
+                    <input type="text" placeholder="Telefone" id="phone" autocomplete="off" onkeypress="mask(this, mphone);" onblur="mask(this, mphone);">
+                   
+                </div>
+                <div class="data">
                     <div class="specialty">
-                        <select name="" id="">
-                            <option value="specialty">Especialidade</option>
+                        <select name="" id="specialties" multiple>
                         </select>
                         <img src="img/plus.png" alt="add specialty" title="Adicionar mais uma especialidade" id="add-specialty">
                     </div>
