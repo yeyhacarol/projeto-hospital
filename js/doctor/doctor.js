@@ -22,6 +22,15 @@ const readDoctors = async () => {
     return data
 }
 
+const readDoctor = async (id) => {
+    const response = await fetch(`${url}/${id}`)
+
+    const data = await response.json()
+
+    return data
+}
+
+
 const updateDoctor = async (doctor, id) => {
     const options = {
         'method': 'PUT',
@@ -34,6 +43,19 @@ const updateDoctor = async (doctor, id) => {
     await fetch (`${url}/${id}`, options)
 }
 
+const getSpecialty = async () => {
+
+    const response = await fetch(`https://hospital-project-es3.herokuapp.com/specialty`)
+
+    const data = await response.json()
+
+    return data
+}
+
+
+
 export { createDoctor,
          readDoctors,
-         updateDoctor }
+         readDoctor,
+         updateDoctor,
+         getSpecialty }

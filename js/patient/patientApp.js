@@ -48,13 +48,13 @@ const editPatient = async (event) => {
         const [action, id] = event.target.id.split('-')
 
         if (action == 'edit') {
-            openModal()
+            openModal(document.getElementById('values'))
 
             let patient = await readPatient(id)
 
             document.getElementById('modal-container').dataset.id = patient.id
 
-            document.getElementById('firstName').value = patient.firstName
+            document.getElementById('firstName').value = capitalize(patient.firstName)
             document.getElementById('lastName').value = patient.lastName
             document.getElementById('birthDate').value = patient.birthDate
             document.getElementById('phone').value = patient.phone
@@ -76,7 +76,5 @@ const updateTable = async () => {
 
 updateTable()
 
-document.getElementById('new-patience').addEventListener('click', openModal)
-document.getElementById('close-modal').addEventListener('click', closeModal)
 document.getElementById('save').addEventListener('click', savePatient)
 document.getElementById('values').addEventListener('click', editPatient)

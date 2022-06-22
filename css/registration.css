@@ -236,8 +236,13 @@ select {
 .specialty {
     display: flex;
     align-items: center;
-
     gap: 5px;
+    width: 100%;
+}
+
+#specialties{
+    width: 100%;
+    height: 80px;
 }
 
 button {
