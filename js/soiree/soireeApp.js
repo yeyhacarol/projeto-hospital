@@ -135,8 +135,6 @@ const saveAppoinment = async () => {
         "date": document.getElementById('appointment-date').value
     }
 
-    console.log(appointment)
-
     if(!appointment.patient){
         toastr.error('Por favor, selecione um paciente!', 'Erro')
         return

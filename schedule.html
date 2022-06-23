@@ -9,7 +9,7 @@
     <link rel="stylesheet" type="text/css" href="css/side-menu.css">
     <link rel="stylesheet" type="text/css" href="css/registration.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script type="module" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
     <script type="module" src="/js/schedule/scheduleApp.js"></script>
     <script type="module" src="/js/sideMenu.js"></script>
     <title>Cadastro de paciente</title>
@@ -81,20 +81,44 @@
         </div>
     </div>
 
-    <div id="modal-container">
+    <div id="appointment-modal">
         <div class="modal">
             <div id="close-modal">
                 <span>X</span>
             </div>
-            <form id="patient-registration">
+            <form id="appointment-registration">
                 <div class="data">
-                    <input type="text" placeholder="Primeiro nome" id="firstName">
-                    <input type="text" placeholder="Sobrenome" id="lastName">
+                    <div class="data-appointment"> 
+                        <label>Nome do paciente</label>
+                        <input type="text" disabled placeholder="Primeiro nome" id="patient-name">
+                    </div>
+                   
+                    <div class="data-appointment"> 
+                        <label>CPF</label>
+                        <input type="text" disabled placeholder="CPF" id="patient-cpf">
+                    </div>
+
+                  
+
+                    <!-- <input type="text" placeholder="Sobrenome" id="lastName">
                     <input type="date" placeholder="Data de nascimento" id="birthDate">
                     <input type="text" placeholder="CPF" id="cpf">
-                    <input type="text" placeholder="Telefone" id="phone">
+                    <input type="text" placeholder="Telefone" id="phone"> -->
                 </div>
-                <button type="button" id="save">Salvar</button>
+                <div class="data">
+                    <div class="data-appointment description"> 
+                        <label>Descrição</label>
+                        <textarea disabled placeholder="CPF" id="appointment-description"> </textarea>
+                    </div>
+                </div>
+                <div class="data">
+                    <div class="data-appointment description"> 
+                        <label>Descrição médica</label>
+                        <textarea placeholder="CPF" id="doctor-description"> </textarea>
+                    </div>
+                </div>
+                
+                <button type="button" id="save">Finalizar</button>
             </form>
         </div>
     </div>

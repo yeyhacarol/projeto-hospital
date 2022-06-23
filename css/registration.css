@@ -177,7 +177,8 @@ input:checked+label:after {
 
 #modal-container.active,
 #doctor-modal.active,
-#specialty-modal.active {
+#specialty-modal.active,
+#appointment-modal.active {
     width: 100%;
     height: 100%;
 
@@ -201,6 +202,10 @@ input:checked+label:after {
     align-items: flex-end;
 
     background-color: #fff;
+}
+
+#appointment-modal .modal {
+    height: 750px;
 }
 
 #close-modal,
@@ -228,7 +233,8 @@ input:checked+label:after {
 
 #patient-registration,
 #doctor-registration,
-#specialty-registration {
+#specialty-registration,
+#appointment-registration {
     width: 100%;
     height: 100%;
 
@@ -396,4 +402,23 @@ button {
     text-transform: capitalize;
     margin-right: 3px;
     user-select: none;
+}
+
+.data-appointment{
+    display: flex;
+    flex-direction: column;
+}
+
+.data-appointment.description{
+    width: 76%;
+    height: 200px;
+}
+
+.description textarea{
+    width: 100%;
+    height: 150px;
+    resize: none;
+    font-family: 'Signika Negative', sans-serif;
+    font-size: clamp(1rem, 3vw, 1.5rem);
+    padding: 10px;
 }
