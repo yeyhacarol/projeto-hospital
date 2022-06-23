@@ -42,7 +42,6 @@ const updateTableDoctor = async (name) => {
     const rows = doctors.map(createRowDoctor)
 
     tableContainer.replaceChildren(...rows)
-
     return doctors
 }
 
@@ -64,12 +63,20 @@ const selectDoctorByName = async () => {
                 document.getElementById('doctor-name').dataset.id = doctor.id
 
                 getAppointments(doctor.id, document.getElementById('appoitment-date').value, document.getElementById('appointment-active').checked)
+
+                document.getElementById('data-list-doctor').innerHTML = ''
             });
         }
     }
 }
 
 const getAppointments = async (id, date, active = true) => {
+
+    if(!Number(id)){
+        toastr.error('Selecione um médico!', 'Erro')
+        return
+    }
+
     const appointments = await getAppointmentsByDoctor(id, (date || '1900-01-01') , active)
 
     const tableContainer = document.getElementById('values')
@@ -99,7 +106,7 @@ const editAppointment = async (event) => {
                 document.getElementById("doctor-description").value = appointment.doctorDescription
                 document.getElementById("doctor-description").disabled = true;
             }
-
+        
         }
     }
 
@@ -118,17 +125,34 @@ const saveAppointment = async () => {
        
     
     }else{
-        toastr.error('Consulta finalizada anteriormente!', 'Erro')
+        toastr.warning('Consulta finalizada anteriormente!', 'Erro')
     }
     
     closeModal(document.getElementById('appointment-modal'))
-    updateTableDoctor()
+    getAppointments(
+        document.getElementById('doctor-name').dataset.id, 
+        document.getElementById('appoitment-date').value, 
+        document.getElementById('appointment-active').checked) 
 
 }
 
-toastr.error('Consulta finalizada anteriormente!', 'Erro')
+
 document.getElementById('appointment-active').checked = true
 document.getElementById('save').addEventListener('click', saveAppointment)
 document.getElementById('doctor-name').addEventListener('keypress', selectDoctorByName)
 document.getElementById('appoitment-date').value = new Date().toISOString().substring(0,10);
 document.getElementById('values').addEventListener('click', editAppointment)
+
+document.getElementById('appoitment-date').addEventListener('change', () => { 
+    getAppointments(document.getElementById('doctor-name').dataset.id, 
+        document.getElementById('appoitment-date').value, 
+        document.getElementById('appointment-active').checked
+    ) 
+})
+
+document.getElementById('appointment-active').addEventListener('change', () => { 
+    getAppointments(document.getElementById('doctor-name').dataset.id, 
+        document.getElementById('appoitment-date').value, 
+        document.getElementById('appointment-active').checked
+    ) 
+})
