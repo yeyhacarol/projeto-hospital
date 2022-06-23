@@ -90,7 +90,6 @@ const saveDoctor = async () => {
 
 const saveSpecialty = async () => {
 
-
     const specialty = {
         "name": document.getElementById('specialty').value.toLowerCase(),
         "cost": (document.getElementById('query-cost').value).replace('R$', '').replace(',', '.').replace(/\s/g, '')
@@ -121,8 +120,8 @@ const editDoctor = async (event) => {
             document.getElementById('lastName').value = capitalize(doctor.lastName)
             document.getElementById('phone').value = doctor.phone
             let element = document.getElementById('specialties');
-            let values = doctor.specialties.map(item =>  item.name);
-
+            let values = doctor.specialties.map(item => capitalize(item.name));
+            
             for (var i = 0; i < element.options.length; i++) {
                 element.options[i].selected = values.indexOf(element.options[i].value) >= 0;
             }
