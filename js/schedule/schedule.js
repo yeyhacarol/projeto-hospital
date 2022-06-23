@@ -19,5 +19,25 @@ const getAppointmentsByDoctor = async (id, date, active) => {
     return data
 }
 
+const getAppointment = async (id) => {
+    const response = await fetch(`https://hospital-project-es3.herokuapp.com/appointment/${id}`)
 
-export { getDoctorByName, getAppointmentsByDoctor }
+    const data = await response.json()
+
+    return data
+}
+
+const updateAppointment = async (appointment, id) => {
+    const options = {
+        'method': 'PUT',
+        'body': JSON.stringify(appointment),
+        'headers': {
+            'content-type': 'application/json'
+        }
+    }
+
+    await fetch(`https://hospital-project-es3.herokuapp.com/appointment/${id}`, options)
+}
+
+
+export { getDoctorByName, getAppointmentsByDoctor, getAppointment, updateAppointment }

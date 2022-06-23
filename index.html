@@ -13,6 +13,7 @@
     <script src="js/sideMenu.js" defer></script>
     <script type="module" src="js/modal.js"></script>
     <script type="module" src="js/patient/patientApp.js"></script>
+    <script src="js/utils/mask.js"></script>
     <title>Cadastro de paciente</title>
 </head>
 
@@ -87,8 +88,8 @@
                     <input type="text" placeholder="Primeiro nome" id="firstName">
                     <input type="text" placeholder="Sobrenome" id="lastName">
                     <input type="date" placeholder="Data de nascimento" id="birthDate">
-                    <input type="text" placeholder="CPF" id="cpf">
-                    <input type="text" placeholder="Telefone" id="phone">
+                    <input type="text" placeholder="CPF" id="cpf" maxlength="14" onkeydown="javascript: fMasc( this, mCPF );">
+                    <input type="text" placeholder="Telefone" id="phone" onkeypress="mask(this, mphone);" onblur="mask(this, mphone);">
                 </div>
                 <button type="button" id="save">Salvar</button>
             </form>
