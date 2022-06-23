@@ -30,7 +30,7 @@ const createOption = (specialty) => {
     const option = document.createElement('option')
     option.setAttribute("id", specialty.id);
     option.setAttribute("data-cost", specialty.cost);
-    option.innerHTML = specialty.name
+    option.innerHTML =  capitalize(specialty.name)
 
     return option
 }

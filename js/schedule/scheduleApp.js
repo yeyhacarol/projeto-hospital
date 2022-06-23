@@ -10,10 +10,12 @@ const createRow = (appointment) => {
         timeZone: 'America/Sao_Paulo'
     }
 
+    let appointmentDate = new Date(appointment.date)
+    appointmentDate.setHours(appointmentDate.getHours() + 3)
     row.innerHTML =
         `<span>${appointment.patient.firstName}</span>
          <span>${appointment.patient.cpf}</span>
-         <span>${new Date(appointment.date).toLocaleString('pt-BR', options) }</span>
+         <span>${appointmentDate.toLocaleString('pt-BR', options) }</span>
          <span>
              <img src="img/edit.png" alt="Editar paciente" id="edit-${appointment.id}">
          </span>`
@@ -62,6 +64,7 @@ const selectDoctorByName = async () => {
                 })[0]
                 document.getElementById('doctor-name').dataset.id = doctor.id
 
+                document.getElementById('doctor-name').value = capitalize(doctor.firstName) + ' ' + capitalize(doctor.lastName)
                 getAppointments(doctor.id, document.getElementById('appoitment-date').value, document.getElementById('appointment-active').checked)
 
                 document.getElementById('data-list-doctor').innerHTML = ''
