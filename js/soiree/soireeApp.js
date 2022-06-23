@@ -68,7 +68,6 @@ const updateTableDoctor = async (id) => {
 
     const tableContainer = document.getElementById('data-list-doctor')
 
-    
     const doctors = await getDoctorBySpecialty(id)
 
     const rows = doctors.map(createRowDoctor)

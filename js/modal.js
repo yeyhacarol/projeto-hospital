@@ -3,13 +3,14 @@
 const patientModal = document.getElementById('modal-container')
 const doctorModal = document.getElementById('doctor-modal')
 const specialtyModal = document.getElementById('specialty-modal')
+const appointmentModal = document.getElementById('appointment-modal')
 
 const openModal = (modal) => {
-    (modal || patientModal || doctorModal || specialtyModal).classList.add('active')
+    (modal || patientModal || doctorModal || specialtyModal || appointmentModal).classList.add('active')
 }
 
 const closeModal = (modal) => {
-    (modal || patientModal || doctorModal || specialtyModal).classList.remove('active')
+    (modal || patientModal || doctorModal || specialtyModal || appointmentModal).classList.remove('active')
 
     document.getElementById('patient-registration')?.reset()
     document.getElementById('doctor-registration')?.reset()
